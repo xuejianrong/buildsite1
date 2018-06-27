@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.scrollpic {
+	width: 1000px;
+	margin:0 auto;
+	position:relative;
+}
+#myscroll {
+	display: block;
+	width: 100%;
+	position: relative;
+    min-height:355px;
+	overflow: hidden;
+}
+#myscroll #myscrollbox {
+	display: block;
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1000000px;
+}
+#myscroll ul {
+	display: block;
+	float: left;
+	list-style-type: none;
+	padding: 0;
+	margin: 0 -100px 0 0;
+}
+#myscroll ul li {
+    
+	float: left;
+	width:250px;
+	padding:0 0 20px 0;
+    text-align:center; display: table-cell;vertical-align:middle;  *display: block; overflow:hidden; line-height:355px; }
+#myscroll ul li i{display:inline-block;   vertical-align:middle}
+#myscroll ul li img{ vertical-align:middle; max-width:235px; max-height:355px;}
+
+#myscroll ul li a {
+	display: block;
+	float: left;
+	width: 235px;
+	padding: 0;
+	position: relative;
+	height: 355px;
+	color: #333;
+	overflow:hidden;
+	background:#fff;
+}
+
+#myscroll a .intro {
+	position: absolute;
+	left: 0;
+	z-index: 10;
+	background-color: #0057c4;
+	filter: alpha(opacity=70);
+	width: 235px;
+	height:355px;
+	color: #fff;
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	text-align: center;
+}
+#myscroll a .intro h5 {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	height: 40px;
+	width: 235px;
+	line-height: 40px;
+	border-bottom: 1px solid #347fdc;
+	font-weight:100;
+}
+#myscroll a .intro p {
+	font-size: 13px;
+	line-height: 20px;
+	margin:20px;
+	overflow: hidden;
+	text-align:left;
+}
+#myscroll a .intro {
+	bottom: -315px;
+}
+#myscroll a:hover .intro {
+	bottom: 0px;
+}
+
+#mybtns a {
+	width: 65px;
+	height: 149px;
+	display: block;
+	float: right;
+	margin-right: 1px;
+	background-color: #c1c1c1;
+	
+}
+#mybtns a:hover {
+	background-color: #347fdc;
+}
+#mybtns a:hover, #myscroll, #mybtns a, #myscroll a:hover .intro, #myscroll a .intro, #myscroll #myscrollbox {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#mybtns #left {
+	background-image: url(../images/index_11.jpg);
+	position:absolute; left:-100px; top:130px;
+}
+#mybtns #right {
+	background-image: url(../images/index_12.jpg);
+	position:absolute; right:-100px; top:130px;
+}
+
+#kinMaxShow {
+	visibility: hidden;
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+}

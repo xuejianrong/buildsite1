@@ -1,0 +1,2 @@
+<?php die('forbidden'); ?>
+{"appid":"101122805","appkey":"bb52eb233885db285aec85d1ac0cd888","callback":"http://www.umfun.com/account/qq_login.html","scope":"get_user_info","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}
