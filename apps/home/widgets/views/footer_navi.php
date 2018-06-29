@@ -14,7 +14,9 @@ use umeworld\lib\Url;
        <dl>
         <dt>产品展示</dt>
 		<?php foreach($aProductsCategoryList as $aProductsCategory){ ?>
+		<?php if(!$aProductsCategory['pid']){ ?>
         <dd><a href="<?php echo Url::to(Yii::$app->id, 'products/index', ['categoryId' => $aProductsCategory['id']]); ?>"><?php echo $aProductsCategory['name']; ?></a></dd>
+        <?php } ?>
         <?php } ?>
        </dl>
        <dl>
