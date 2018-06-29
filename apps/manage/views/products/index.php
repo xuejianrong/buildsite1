@@ -68,11 +68,12 @@ $this->setTitle($siteTitle);
 		html += '</div>';
 		html += '<div class="form-group">';
 			html += '<label>分类</label>';
-			html += '<select class="J-cp-categoryId form-control">';
+			html += '<table style="border:none;"><tr style="border:none;"><td style="border:none;"><select class="J-cp-pid form-control" style="width:200px;">';
 			for(var i in aCategoryList){
 				html += '<option value="' + aCategoryList[i].id + '">' + aCategoryList[i].name + '</option>';
 			}
-			html += '</select>';
+			html += '</select></td><td style="border:none;">';
+			html += '<select class="J-cp-categoryId form-control" style="margin-left:10px;width:200px;"></select></td></tr></table>';
 		html += '</div>';
 		html += '<div class="form-group">';
 			html += '<label>产品图片</label>';
@@ -175,8 +176,34 @@ $this->setTitle($siteTitle);
 			dialogShown : function(){
 				if(id){
 					$('.J-cp-status').val(aData.status);
-					$('.J-cp-categoryId').val(aData.category_id);
 					$('.J-cp-hasSample').val(aData.has_sample);
+					$('.J-cp-pid').change(function(){
+						var flag = false;
+						var html = '';
+						for(var j in aCategoryList){
+							if(aCategoryList[j].pid == $(this).val()){
+								if(aData.category_id == aCategoryList[j].id){
+									flag = true;
+								}
+								html += '<option value="' + aCategoryList[j].id + '">' + aCategoryList[j].name + '</option>';
+							}
+						}
+						$('.J-cp-categoryId').html(html);
+						if(flag){
+							$('.J-cp-categoryId').val(aData.category_id);
+						}
+					});
+					for(var i in aCategoryList){
+						if(aCategoryList[i].id == aData.category_id){
+							if(aCategoryList[i].pid != 0){
+								$('.J-cp-pid').val(aCategoryList[i].pid);
+							}else{
+								$('.J-cp-pid').val(aCategoryList[i].id);
+							}
+							$('.J-cp-pid').change();
+							break;
+						}
+					}
 				}
 				$('.J-common-upload-image').unbind();
 				$('.J-common-upload-image').on('change', function(){
@@ -228,12 +255,13 @@ $this->setTitle($siteTitle);
 							value : $(this).find('.J-other-info-value').val()
 						});
 					});
+					
 					ajax({
 						url : Tools.url('<?php echo Yii::$app->id; ?>', 'products/save'),
 						data : {
 							id : id,
 							name : $('.J-cp-name').val(),
-							categoryId : $('.J-cp-categoryId').val(),
+							categoryId : $('.J-cp-categoryId').val() == null ? $('.J-cp-pid').val() : $('.J-cp-categoryId').val(),
 							shortcut : $('.J-cp-shortcut').attr('data-path'),
 							productModel : $('.J-cp-productModel').val(),
 							producePlace : $('.J-cp-producePlace').val(),

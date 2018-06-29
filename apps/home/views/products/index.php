@@ -7,17 +7,36 @@ $this->registerCssFile(Yii::getAlias('@r.css.pagination'));
 
 $siteTitle = '产品展示';
 $this->setTitle($siteTitle);
-
+$i = 0;
 ?>
 <div class="banner"></div>
+<?php if($aRootProductsCategory){ ?>
+<div class="about">
+	<h2><?php echo $aRootProductsCategory['ename']; ?></h2>
+	<h1><?php echo $aRootProductsCategory['name']; ?></h1>
+</div>
+<div class="productkind">
+	<ul>
+	<?php foreach($aProductsCategoryList as $aProductsCategory){ ?>
+		<?php if($aProductsCategory['pid'] == $aRootProductsCategory['id']){ ?>
+		<li class="<?php echo $activeCategoryId == $aProductsCategory['id'] ? 'hover' : ''; ?>"><a href="<?php echo Url::to(Yii::$app->id, 'products/index', ['categoryId' => $aProductsCategory['id']]); ?>"><?php echo $aProductsCategory['name']; ?> </a></li>
+		<?php $i++;} ?>
+	<?php } ?>
+	</ul>
+	<div class="clear"></div>
+</div>
+<?php }else{ ?>
 <div class="mynav">
 	<ul>
 	<?php foreach($aProductsCategoryList as $aProductsCategory){ ?>
-		<li><a href="products_list.html" title="<?php echo $aProductsCategory['name']; ?>"><img src="<?php echo Yii::getAlias('@r.url'); ?>/<?php echo $aProductsCategory['shortcut']; ?>" alt="<?php echo $aProductsCategory['name']; ?>" /></a></li>
+		<?php if(!$aProductsCategory['pid']){ ?>
+		<li><a href="<?php echo Url::to(Yii::$app->id, 'products/index', ['categoryId' => $aProductsCategory['id']]); ?>" title="<?php echo $aProductsCategory['name']; ?>"><img src="<?php echo Yii::getAlias('@r.url'); ?>/<?php echo $aProductsCategory['shortcut']; ?>" alt="<?php echo $aProductsCategory['name']; ?>" /></a></li>
+		<?php } ?>
 	<?php } ?>
 	</ul>
   <div class="clear"></div>
 </div>
+<?php } ?>
 <div class="product">
 	<div class="scrollpic">
 		<div id="myscroll">

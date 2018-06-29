@@ -26,8 +26,24 @@ class ProductsController extends Controller{
 		$aCondition = [
 			'status' => Products::STATUS_PUBLISHED,
 		];
+		$mProductsCategory = false;
+		$aRootProductsCategory = [];
+		$activeCategoryId = $categoryId;
 		if($categoryId){
-			$aCondition['category_id'] = $categoryId;
+			$mProductsCategory = ProductsCategory::findOne($categoryId);
+			if(!$mProductsCategory->pid){
+				$aRootProductsCategory = $mProductsCategory->toArray();
+				$mChildProductsCategory = ProductsCategory::findOne(['pid' => $mProductsCategory->id]);
+				if($mChildProductsCategory){
+					$activeCategoryId = $mChildProductsCategory->id;
+				}
+			}else{
+				$mParentProductsCategory = ProductsCategory::findOne($mProductsCategory->pid);
+				if($mParentProductsCategory){
+					$aRootProductsCategory = $mParentProductsCategory->toArray();
+				}
+			}
+			$aCondition['category_id'] = $activeCategoryId;
 		}
 		$totalCount = Products::getCount($aCondition);
 		$aProductsList = Products::getList($aCondition, [
@@ -43,6 +59,8 @@ class ProductsController extends Controller{
 			'oPage' => $oPage,
 			'aProductsCategoryList' => $aProductsCategoryList,
 			'aProductsList' => $aProductsList,
+			'aRootProductsCategory' => $aRootProductsCategory,
+			'activeCategoryId' => $activeCategoryId,
 		]);
 	}
 	
@@ -63,15 +81,7 @@ class ProductsController extends Controller{
 		
 		$mProductsCategory = ProductsCategory::findOne($mProducts->category_id);
 		
-		$aRelateProductsList = Products::getList([
-			'status' => Products::STATUS_PUBLISHED,
-			'category_id' => $mProducts->category_id,
-			'not_id' => $mProducts->id,
-		], [
-			'page' => 1,
-			'page_size' => 4,
-			'order_by' => ['id' => SORT_DESC],
-		]);
+		$aRelateProductsList = $mProducts->getRelateProductsList(4);
 		
 		return $this->render('detail', [
 			'aProducts' => $mProducts->toArray(),

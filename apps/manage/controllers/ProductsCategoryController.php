@@ -23,6 +23,7 @@ class ProductsCategoryController extends Controller{
 		$id = (int)Yii::$app->request->post('id');
 		$pid = (int)Yii::$app->request->post('pid');
 		$name = (string)trim(strip_tags(Yii::$app->request->post('name')));
+		$ename = (string)trim(strip_tags(Yii::$app->request->post('ename')));
 		$shortcut = (string)Yii::$app->request->post('shortcut');
 		
 		if(!$name){
@@ -32,6 +33,12 @@ class ProductsCategoryController extends Controller{
 		if($mProductsCategory && $mProductsCategory->id != $id){
 			return new Response('分类名称已存在', -1);
 		}
+		if($pid){
+			$mTempProductsCategory = ProductsCategory::findOne($pid);
+			if(!$mTempProductsCategory){
+				return new Response('父分类不存在', 0);
+			}
+		}
 		
 		if($id){
 			$mProductsCategory = ProductsCategory::findOne($id);
@@ -40,12 +47,14 @@ class ProductsCategoryController extends Controller{
 			}
 			$mProductsCategory->set('pid', $pid);
 			$mProductsCategory->set('name', $name);
+			$mProductsCategory->set('ename', $ename);
 			$mProductsCategory->set('shortcut', $shortcut);
 			$mProductsCategory->save();
 		}else{
 			ProductsCategory::insert([
 				'pid' => $pid,
 				'name' => $name,
+				'ename' => $ename,
 				'shortcut' => $shortcut,
 			]);
 		}

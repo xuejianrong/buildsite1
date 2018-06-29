@@ -109,4 +109,29 @@ class Products extends \common\lib\DbOrmModel{
 		return $aWhere;
 	}
 	
+	public function getRelateProductsList($pageSize){
+		$aRelateProductsList = static::getList([
+			'status' => static::STATUS_PUBLISHED,
+			'category_id' => $this->category_id,
+			'not_id' => $this->id,
+		], [
+			'page' => 1,
+			'page_size' => $pageSize,
+			'order_by' => ['id' => SORT_DESC],
+		]);
+		if(count($aRelateProductsList) < $pageSize){
+			$aNewProductsList = static::getList([
+				'status' => static::STATUS_PUBLISHED,
+				'not_id' => array_merge([$this->id], array_values(ArrayHelper::getColumn($aRelateProductsList, 'id'))),
+			], [
+				'page' => 1,
+				'page_size' => $pageSize - count($aRelateProductsList),
+				'order_by' => ['id' => SORT_DESC],
+			]);
+			$aRelateProductsList = array_merge($aRelateProductsList, $aNewProductsList);
+		}
+		
+		return $aRelateProductsList;
+	}
+	
 }

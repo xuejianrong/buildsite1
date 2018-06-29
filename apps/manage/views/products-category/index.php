@@ -43,12 +43,27 @@ $this->setTitle($siteTitle);
 			html += '<input class="J-cp-name form-control" placeholder="" value="' + (typeof(aData.name) != 'undefined' ? aData.name : '') + '" />';
 		html += '</div>';
 		html += '<div class="form-group">';
+			html += '<label>分类英文名称</label>';
+			html += '<input class="J-cp-ename form-control" placeholder="" value="' + (typeof(aData.ename) != 'undefined' ? aData.ename : '') + '" />';
+		html += '</div>';
+		html += '<div class="form-group">';
 			html += '<label>分类图片</label>';
 			html += '<button type="button" class="btn btn-primary" onclick="commonUploadImage(this);">选择图片</button><input type="file" class="J-common-upload-image" style="display:none;" />';
 			html += '<p class="help-block">建议上传尺寸: 300 x 300 像素</p>';
 		html += '</div>';
 		html += '<div class="form-group">';
-			html += '<img class="J-cp-shortcut img-thumbnail" style="width:300px;height:300px;" data-path="' + (typeof(aData.shortcut) != 'undefined' ? aData.shortcut : '') + '" src="' + (typeof(aData.shortcut) != 'undefined' ? '<?php echo Yii::getAlias('@r.url') . '/'; ?>' + aData.shortcut : 'http://placehold.it/300x300') + '" alt="">';
+			html += '<img class="J-cp-shortcut img-thumbnail" style="width:300px;height:300px;" data-path="' + (typeof(aData.shortcut) != 'undefined' ? aData.shortcut : '') + '" src="' + (typeof(aData.shortcut) != 'undefined' && aData.shortcut != '' ? '<?php echo Yii::getAlias('@r.url') . '/'; ?>' + aData.shortcut : 'http://placehold.it/300x300') + '" alt="">';
+		html += '</div>';
+		html += '<div class="form-group">';
+			html += '<label>所在父分类</label>';
+			html += '<select class="J-cp-pid form-control">';
+			html += '<option value="0">无</option>';
+			for(var i in aProductsCategoryList){
+				if(aProductsCategoryList[i].pid == 0){
+					html += '<option value="' + aProductsCategoryList[i].id + '">' + aProductsCategoryList[i].name + '</option>';
+				}
+			}
+			html += '</select>';
 		html += '</div>';
 		
 		return html;
@@ -104,7 +119,9 @@ $this->setTitle($siteTitle);
 						url : Tools.url('<?php echo Yii::$app->id; ?>', 'products-category/save'),
 						data : {
 							id : id,
+							pid : $('.J-cp-pid').val(),
 							name : $('.J-cp-name').val(),
+							ename : $('.J-cp-ename').val(),
 							shortcut : $('.J-cp-shortcut').attr('data-path'),
 						},
 						beforeSend : function(){

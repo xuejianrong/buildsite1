@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50639
 File Encoding         : 65001
 
-Date: 2018-06-12 11:49:27
+Date: 2018-06-29 13:41:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -99,8 +99,8 @@ CREATE TABLE `news` (
 -- ----------------------------
 -- Records of news
 -- ----------------------------
-INSERT INTO `news` VALUES ('1', '1', 'data/uploads/96/298558195a1b1c55119e65ea88418567.jpg', '珠海黑马即将参加2015第74届中国国际医疗器械（秋季）博览会', '<p><span style=\"color: rgb(0, 0, 0); font-family: 宋体; font-size: 14px; text-indent: 28px;\">中国国际医疗器械博览会（CMEF），始创于1979年，每年春秋两届，在经历了30多年的不断创新、自我完善，已成为亚太地区最大的医疗器械及相关产品、服务展览会。展出内容全面涵盖了包括医用影像、体外诊断、电子、光学、急救、康复护理以及医疗信息技术、外包服务等上万种产品，直接并全面服务于医疗器械行业从源头到终端整条医疗产业链。每一届来自20 多个国家的2700余家医疗器械生产企业和超过全球100多个国家和地区的150000人次的政府机构采购、医院买家和经销商汇聚CMEF交易、交流；随着展览会更加专业化的纵深发展，先后创立了会议论坛、 CMEF Imaging、CMEF IVD、CMEF IT、CMEF Orthopedics 以及ICMD一系列的医疗领域子品牌，CMEF已成为医疗行业内最大的专业医疗采购贸易平台、最佳的企业形象发布地以及专业信息集散地和学术、 技术交流平台。</span></p><p><img src=\"http://www.buildsite1.test/resource/data/uploads/72/b65b62dd56b2c3159d09b4473588bc08.jpg\" _src=\"http://www.buildsite1.test/resource/data/uploads/72/b65b62dd56b2c3159d09b4473588bc08.jpg\" style=\"max-width: 100%;\"></p><p><span style=\"color: rgb(0, 0, 0); font-family: 宋体; font-size: 14px; text-indent: 28px;\">我司在此次展会上将展示的产品包括：气道清除系统、红外偏振光治疗仪、亚低温治疗仪、振动式物理治疗仪、空气波压力治疗仪、牙科手机清洗机、电动气压止血仪等临床医疗器械以及器皿清洗机、离心机、基因扩增仪等实验室设备产品。</span></p>', '0', '1', '1528424302', '1528424215');
-INSERT INTO `news` VALUES ('2', '2', 'data/uploads/40/7a219dd43a712dc63433e55e3b1b130c.jpg', '“对客户好总是对的”黑马公司总经理组织内部产品培训', '<p>“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训</p>', '0', '1', '1528424514', '1528424514');
+INSERT INTO `news` VALUES ('1', '1', 'data/uploads/96/298558195a1b1c55119e65ea88418567.jpg', '珠海黑马即将参加2015第74届中国国际医疗器械（秋季）博览会', '<p><span style=\"color: rgb(0, 0, 0); font-family: 宋体; font-size: 14px; text-indent: 28px;\">中国国际医疗器械博览会（CMEF），始创于1979年，每年春秋两届，在经历了30多年的不断创新、自我完善，已成为亚太地区最大的医疗器械及相关产品、服务展览会。展出内容全面涵盖了包括医用影像、体外诊断、电子、光学、急救、康复护理以及医疗信息技术、外包服务等上万种产品，直接并全面服务于医疗器械行业从源头到终端整条医疗产业链。每一届来自20 多个国家的2700余家医疗器械生产企业和超过全球100多个国家和地区的150000人次的政府机构采购、医院买家和经销商汇聚CMEF交易、交流；随着展览会更加专业化的纵深发展，先后创立了会议论坛、 CMEF Imaging、CMEF IVD、CMEF IT、CMEF Orthopedics 以及ICMD一系列的医疗领域子品牌，CMEF已成为医疗行业内最大的专业医疗采购贸易平台、最佳的企业形象发布地以及专业信息集散地和学术、 技术交流平台。</span></p><p><img src=\"http://www.buildsite1.test/resource/data/uploads/72/b65b62dd56b2c3159d09b4473588bc08.jpg\" _src=\"http://www.buildsite1.test/resource/data/uploads/72/b65b62dd56b2c3159d09b4473588bc08.jpg\" style=\"max-width: 100%;\"></p><p><span style=\"color: rgb(0, 0, 0); font-family: 宋体; font-size: 14px; text-indent: 28px;\">我司在此次展会上将展示的产品包括：气道清除系统、红外偏振光治疗仪、亚低温治疗仪、振动式物理治疗仪、空气波压力治疗仪、牙科手机清洗机、电动气压止血仪等临床医疗器械以及器皿清洗机、离心机、基因扩增仪等实验室设备产品。</span></p>', '2', '1', '1528424302', '1528424215');
+INSERT INTO `news` VALUES ('2', '2', 'data/uploads/40/7a219dd43a712dc63433e55e3b1b130c.jpg', '“对客户好总是对的”黑马公司总经理组织内部产品培训', '<p>“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训“对客户好总是对的”黑马公司总经理组织内部产品培训</p>', '4', '1', '1528424514', '1528424514');
 
 -- ----------------------------
 -- Table structure for `news_category`
@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS `news_category`;
 CREATE TABLE `news_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID自增',
   `pid` int(11) NOT NULL COMMENT '父节点ID',
-  `name` varchar(50) NOT NULL COMMENT '新闻分类名称',
+  `name` varchar(50) NOT NULL COMMENT '分类名称',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
@@ -146,9 +146,9 @@ CREATE TABLE `products` (
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES ('1', '1', '红外偏振光治疗仪', 'data/uploads/45/568b514b777d41a9a6bdcb248d2e4761.jpg', 'H2', '广东省 珠海市', '黑马', '详情请电话咨询', '指定地点', '0', '珠海黑马公司红外偏振光治疗仪，是采用国际先进光电技术，产生600-1600nm的点式直线红外偏振光，最大光波输出功率高达5600mw，对人体组织的有效作用深度可达5cm以上，适用于软组织扭挫伤恢复期改善局部血液循环，促进肿胀消退和镇痛。', '[{\"key\":\"\\u5149\\u8c31\\u8303\\u56f4\",\"value\":\"600-1600nm\"},{\"key\":\"\\u4e2d\\u5fc3\\u5cf0\\u503c\\u6ce2\\u957f\",\"value\":\"\\u7ea61100nm\"},{\"key\":\"\\u590d\\u5408\\u6ce2\\u957f\\u8303\\u56f4\",\"value\":\"600-1600nm\"},{\"key\":\"\\u504f\\u632f\\u5149\",\"value\":\"\\u7ebf\\u6027\\u504f\\u632f\\u5149\"},{\"key\":\"\\u6700\\u5927\\u8f93\\u51fa\\u5149\\u529f\\u7387\",\"value\":\"\\u22655600mw\"},{\"key\":\"\\u5149\\u6e90\",\"value\":\"\\u65e5\\u672c\\u539f\\u88c5\\u5bbd\\u5149\\u8c31\\u91d1\\u5364\\u706f\\uff0c150W\\u00d72\"},{\"key\":\"\\u5149\\u7ea4\",\"value\":\"\\u9ad8\\u5bfc\\u901a\\u7387\\u76f4\\u7ebf\\u5149\\u7ea4\"},{\"key\":\"\\u63a7\\u5236\\u65b9\\u5f0f\",\"value\":\"\\u53cc\\u7167\\u5c04\\u5934\\u5de5\\u4f5c\\uff0c\\u53c2\\u6570\\u53ef\\u5355\\u72ec\\u8c03\\u6574\"},{\"key\":\"\\u663e\\u793a\\u65b9\\u5f0f\",\"value\":\"\\u53cc\\u5c4f\\u4e2d\\u6587LCD\\u9ad8\\u6e05\\u663e\\u793a\\uff0c\\u64cd\\u4f5c\\u66f4\\u7b80\\u4fbf\"},{\"key\":\"\\u6cbb\\u7597\\u6a21\\u5f0f\",\"value\":\"\\u5b89\\u5168\\u3001\\u8fde\\u7eed\\u3001\\u95f4\\u9694\\u3001\\u529f\\u7387\\u4f18\\u5148\\u3001\\u65f6\\u95f4\\u4f18\\u5148\\u7b495\\u79cd\\u6a21\\u5f0f\\uff0c100\\u591a\\u79cd\\u7ec4\\u5408\"},{\"key\":\"\\u5149\\u529f\\u7387\\u8c03\\u8282\",\"value\":\"10-100%\\u8fde\\u7eed\\u53ef\\u8c03\"},{\"key\":\"\\u6cbb\\u7597\\u65f6\\u95f4\",\"value\":\"1-10\\u5206\\u949f\\u8fde\\u7eed\\u53ef\\u8c03\"},{\"key\":\"\\u7167\\u5c04\\u5934\\u89c4\\u683c\",\"value\":\"B1\\u3001SG\\u3001C\\u3001D\\u7b49\"}]', '1', '1528437297');
-INSERT INTO `products` VALUES ('2', '2', 'G1000振动排痰机', 'data/uploads/51/8a258f8025344e0e1bba3661b1c2cfd1.jpg', 'G1000', '法国', 'kucii', '10000', '中国', '0', 'G1000振动排痰机G1000振动排痰机G1000振动排痰机', '[{\"key\":\"\\u6cbb\\u7597\\u65f6\\u95f4\",\"value\":\"1-10\\u5206\\u949f\\u8fde\\u7eed\\u53ef\\u8c03\"},{\"key\":\"\\u6700\\u5927\\u8f93\\u51fa\\u5149\\u529f\\u7387\",\"value\":\"\\u22655600mw\"}]', '1', '1528437635');
-INSERT INTO `products` VALUES ('3', '3', '32414', 'data/uploads/43/5062f6c8783b6395f349ee68843368a1.jpg', '324', '423', '4324', '234', '234', '1', 'gfdsgdsfgd', '[{\"key\":\"dfsg\",\"value\":\"sdfg\"},{\"key\":\"dsg\",\"value\":\"sdfgsd\"}]', '1', '1528709675');
+INSERT INTO `products` VALUES ('1', '3', '红外偏振光治疗仪', 'data/uploads/45/568b514b777d41a9a6bdcb248d2e4761.jpg', 'H2', '广东省 珠海市', '黑马', '详情请电话咨询', '指定地点', '0', '珠海黑马公司红外偏振光治疗仪，是采用国际先进光电技术，产生600-1600nm的点式直线红外偏振光，最大光波输出功率高达5600mw，对人体组织的有效作用深度可达5cm以上，适用于软组织扭挫伤恢复期改善局部血液循环，促进肿胀消退和镇痛。', '[{\"key\":\"\\u5149\\u8c31\\u8303\\u56f4\",\"value\":\"600-1600nm\"},{\"key\":\"\\u4e2d\\u5fc3\\u5cf0\\u503c\\u6ce2\\u957f\",\"value\":\"\\u7ea61100nm\"},{\"key\":\"\\u590d\\u5408\\u6ce2\\u957f\\u8303\\u56f4\",\"value\":\"600-1600nm\"},{\"key\":\"\\u504f\\u632f\\u5149\",\"value\":\"\\u7ebf\\u6027\\u504f\\u632f\\u5149\"},{\"key\":\"\\u6700\\u5927\\u8f93\\u51fa\\u5149\\u529f\\u7387\",\"value\":\"\\u22655600mw\"},{\"key\":\"\\u5149\\u6e90\",\"value\":\"\\u65e5\\u672c\\u539f\\u88c5\\u5bbd\\u5149\\u8c31\\u91d1\\u5364\\u706f\\uff0c150W\\u00d72\"},{\"key\":\"\\u5149\\u7ea4\",\"value\":\"\\u9ad8\\u5bfc\\u901a\\u7387\\u76f4\\u7ebf\\u5149\\u7ea4\"},{\"key\":\"\\u63a7\\u5236\\u65b9\\u5f0f\",\"value\":\"\\u53cc\\u7167\\u5c04\\u5934\\u5de5\\u4f5c\\uff0c\\u53c2\\u6570\\u53ef\\u5355\\u72ec\\u8c03\\u6574\"},{\"key\":\"\\u663e\\u793a\\u65b9\\u5f0f\",\"value\":\"\\u53cc\\u5c4f\\u4e2d\\u6587LCD\\u9ad8\\u6e05\\u663e\\u793a\\uff0c\\u64cd\\u4f5c\\u66f4\\u7b80\\u4fbf\"},{\"key\":\"\\u6cbb\\u7597\\u6a21\\u5f0f\",\"value\":\"\\u5b89\\u5168\\u3001\\u8fde\\u7eed\\u3001\\u95f4\\u9694\\u3001\\u529f\\u7387\\u4f18\\u5148\\u3001\\u65f6\\u95f4\\u4f18\\u5148\\u7b495\\u79cd\\u6a21\\u5f0f\\uff0c100\\u591a\\u79cd\\u7ec4\\u5408\"},{\"key\":\"\\u5149\\u529f\\u7387\\u8c03\\u8282\",\"value\":\"10-100%\\u8fde\\u7eed\\u53ef\\u8c03\"},{\"key\":\"\\u6cbb\\u7597\\u65f6\\u95f4\",\"value\":\"1-10\\u5206\\u949f\\u8fde\\u7eed\\u53ef\\u8c03\"},{\"key\":\"\\u7167\\u5c04\\u5934\\u89c4\\u683c\",\"value\":\"B1\\u3001SG\\u3001C\\u3001D\\u7b49\"}]', '1', '1528437297');
+INSERT INTO `products` VALUES ('2', '4', 'G1000振动排痰机', 'data/uploads/51/8a258f8025344e0e1bba3661b1c2cfd1.jpg', 'G1000', '法国', 'kucii', '10000', '中国', '0', 'G1000振动排痰机G1000振动排痰机G1000振动排痰机', '[{\"key\":\"\\u6cbb\\u7597\\u65f6\\u95f4\",\"value\":\"1-10\\u5206\\u949f\\u8fde\\u7eed\\u53ef\\u8c03\"},{\"key\":\"\\u6700\\u5927\\u8f93\\u51fa\\u5149\\u529f\\u7387\",\"value\":\"\\u22655600mw\"}]', '1', '1528437635');
+INSERT INTO `products` VALUES ('3', '4', '32414', 'data/uploads/43/5062f6c8783b6395f349ee68843368a1.jpg', '324', '423', '4324', '234', '234', '1', 'gfdsgdsfgd', '[{\"key\":\"dfsg\",\"value\":\"sdfg\"},{\"key\":\"dsg\",\"value\":\"sdfgsd\"}]', '1', '1528709675');
 
 -- ----------------------------
 -- Table structure for `products_category`
@@ -158,16 +158,19 @@ CREATE TABLE `products_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID自增',
   `pid` int(11) NOT NULL COMMENT '父节点ID',
   `name` varchar(50) NOT NULL COMMENT '产品分类名称',
+  `ename` varchar(50) NOT NULL COMMENT '英文分类名称',
   `shortcut` varchar(100) NOT NULL COMMENT '图片',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of products_category
 -- ----------------------------
-INSERT INTO `products_category` VALUES ('1', '0', '临床医疗设备', 'data/uploads/55/c6b4de15b6f7ce2c664e84c869ba8156.jpg');
-INSERT INTO `products_category` VALUES ('2', '0', '实验室设备', 'data/uploads/29/906bccc791ad5fddf59e9fb3b279af7d.jpg');
-INSERT INTO `products_category` VALUES ('3', '0', '公安法医系列设备', 'data/uploads/72/ae4ee3ee519c69cec6b8a2828e80b7c5.jpg');
+INSERT INTO `products_category` VALUES ('1', '0', '临床医疗设备', 'Clinical medical equipment', 'data/uploads/55/c6b4de15b6f7ce2c664e84c869ba8156.jpg');
+INSERT INTO `products_category` VALUES ('2', '0', '实验室设备', 'Lab equipment', 'data/uploads/29/906bccc791ad5fddf59e9fb3b279af7d.jpg');
+INSERT INTO `products_category` VALUES ('3', '0', '公安法医系列设备', 'Police medical equipment', 'data/uploads/72/ae4ee3ee519c69cec6b8a2828e80b7c5.jpg');
+INSERT INTO `products_category` VALUES ('4', '1', '红外偏振光治疗仪', 'hwpzgzly', '');
+INSERT INTO `products_category` VALUES ('5', '2', '高频胸壁振荡排痰仪', 'gpxbzdpty', '');
 
 -- ----------------------------
 -- Table structure for `site_message`
