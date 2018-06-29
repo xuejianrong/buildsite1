@@ -92,6 +92,9 @@ $this->setTitle($siteTitle);
 				$('.modal-body').css({"max-height" : 500});
 			},
 			dialogShown : function(){
+				if(aData.pid != 0){
+					$('.J-cp-pid').val(aData.pid);
+				}
 				$('.J-common-upload-image').unbind();
 				$('.J-common-upload-image').on('change', function(){
 					Tools.showLoading();
