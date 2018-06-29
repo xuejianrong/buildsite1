@@ -40,6 +40,9 @@ $this->setTitle($siteTitle);
 			<p><span class="news_number"><?php echo $aNews['click_count']; ?></span>发布时间：<?php echo date('Y-m-d', $aNews['publish_time']); ?></p>
 		</li>
 	<?php } ?>
+	<?php if(!$aNewsList){ ?>
+	<center>该栏目还没有相关内容,敬请期待!</center>
+	<?php } ?>
    </ul>
    <div class="clear"></div>
 </div>

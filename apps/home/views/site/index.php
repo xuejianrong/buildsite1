@@ -10,7 +10,9 @@ $this->setTitle($siteTitle);
 <div class="mynav">
 	<ul>
 	<?php foreach($aProductsCategoryList as $aProductsCategory){ ?>
+		<?php if(!$aProductsCategory['pid']){ ?>
 		<li><a href="<?php echo Url::to(Yii::$app->id, 'products/index', ['categoryId' => $aProductsCategory['id']]); ?>" title="<?php echo $aProductsCategory['name']; ?>"><img src="<?php echo Yii::getAlias('@r.url'); ?>/<?php echo $aProductsCategory['shortcut']; ?>" alt="<?php echo $aProductsCategory['name']; ?>" /></a></li>
+		<?php } ?>
 	<?php } ?>
 	</ul>
   <div class="clear"></div>

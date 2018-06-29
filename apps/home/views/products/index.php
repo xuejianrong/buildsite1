@@ -54,6 +54,9 @@ $i = 0;
 			<?php } ?>
 			</ul>
 		</div>
+		<?php if(!$aProductsList){ ?>
+		<center>该栏目还没有相关内容,敬请期待!</center>
+		<?php } ?>
 	</div>
 </div>
 <center><?php echo LinkPager::widget(['pagination' => $oPage]); ?></center>
