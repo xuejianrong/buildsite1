@@ -94,7 +94,7 @@ $this->setTitle($siteTitle);
 					var self = this;
 					Tools.uploadFileHandle('<?php echo Url::to(Yii::$app->id, 'upload/upload-image'); ?>', self['files'][0], function(aData){
 						Tools.hideLoading();
-						$('.J-cp-linkLogo').attr('src', App.url.resource + '/' + aData.data);
+						$('.J-cp-linkLogo').attr('src', App.url.resource + aData.data);
 						$('.J-cp-linkLogo').attr('data-path', aData.data);
 					});
 				});
