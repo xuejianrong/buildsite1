@@ -1,0 +1,9 @@
+1、批量修改为当前系统时间
+
+touch `find ./* -name '*'`
+
+2、批量修改为指定时间
+
+touch -t 201412261313.30 `find ./* -name '*'`
+
+-t后面的时间格式为 [[CC]YY]MMDDhhmm[.ss]
