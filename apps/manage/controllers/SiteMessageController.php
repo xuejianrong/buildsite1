@@ -28,4 +28,17 @@ class SiteMessageController extends Controller{
 		]);
 	}
 
+	public function actionDelete(){
+		$id = (string)Yii::$app->request->post('id');
+		
+		$mSiteMessage = SiteMessage::findOne($id);
+		if(!$mSiteMessage){
+			return new Response('找不到记录，删除失败', 0);
+		}
+		
+		$mSiteMessage->delete();
+		
+		return new Response('删除成功', 1);
+	}
+
 }

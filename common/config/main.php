@@ -50,6 +50,15 @@ return [
 			'errorAction' => 'site/error',	//所有站点APP统一使用site控制器的error方法处理网络可能有点慢
 		],
 
+		'ui' => [
+			'class' => 'umeworld\lib\BaseUi',
+			'aTips' => [
+				'error' => [
+					'common' => '抱歉,系统繁忙,请重试',
+				],
+			],
+		],
+
 		'view' => [
 			'class' => 'umeworld\lib\View',
 			'on beginPage' => function(){
