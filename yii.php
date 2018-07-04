@@ -8,7 +8,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-require(__DIR__ . '/config-local.php');
+require(__DIR__ . '/common/config/config.php');
 
 defined('YII_DEBUG') or define('YII_DEBUG', $aLocal['is_debug']);
 defined('YII_ENV') or define('YII_ENV', $aLocal['env']);
