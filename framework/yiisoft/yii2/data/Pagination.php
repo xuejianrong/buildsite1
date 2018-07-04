@@ -286,6 +286,7 @@ class Pagination extends Object implements Linkable
 				$aGetParam = ['page' => $params['page'], 'perpage' => $params['perpage']];
 				if(isset($this->aPaginationUrl[2]) && is_array($this->aPaginationUrl[2])){
 					$aGetParam = array_merge($aGetParam, $this->aPaginationUrl[2]);
+					$aGetParam['page'] = $params['page'];
 				}
 				return \umeworld\lib\Url::to($this->aPaginationUrl[0], $this->aPaginationUrl[1], $aGetParam);
 			}else{
