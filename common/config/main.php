@@ -117,8 +117,8 @@ return [
 			],
 
 			'masterConfig' => [
-				'username' => $aLocal['db']['master']['username'],
-				'password' => $aLocal['db']['master']['password'],
+				'username' => $aLocal['db'][YII_ENV]['master']['username'],
+				'password' => $aLocal['db'][YII_ENV]['master']['password'],
 				'attributes' => [
 					// use a smaller connection timeout
 					PDO::ATTR_TIMEOUT => 10,
@@ -126,11 +126,11 @@ return [
 				],
 			],
 
-			'masters' => $aLocal['db']['master']['node'],
+			'masters' => $aLocal['db'][YII_ENV]['master']['node'],
 
 			'slaveConfig' => [
-				'username' => $aLocal['db']['slaver']['username'],
-				'password' => $aLocal['db']['master']['password'],
+				'username' => $aLocal['db'][YII_ENV]['slaver']['username'],
+				'password' => $aLocal['db'][YII_ENV]['master']['password'],
 				'attributes' => [
 					// use a smaller connection timeout
 					PDO::ATTR_TIMEOUT => 10,
@@ -138,7 +138,7 @@ return [
 				],
 			],
 
-			'slaves' => $aLocal['db']['slaver']['node'],
+			'slaves' => $aLocal['db'][YII_ENV]['slaver']['node'],
 		],
 
         'redis' => [
