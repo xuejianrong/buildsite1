@@ -2,8 +2,9 @@
 namespace umeworld\lib;
 
 use Yii;
+use common\model\Redis;
 
-class RedisCache extends \yii\base\Component{
+class DbCache extends \yii\base\Component{
 	/**
 	 * @var \Redis
 	 */
@@ -16,7 +17,7 @@ class RedisCache extends \yii\base\Component{
 
 	public function init() {
 		parent::init();
-		$this->connect();
+		//$this->connect();
 	}
 
 	public function switchDb($serverName = ''){
@@ -26,15 +27,15 @@ class RedisCache extends \yii\base\Component{
 	}
 
 	public function selectPart($part = 0){
-		if($part){
+		/*if($part){
 			$this->redis->select($part);
 		}else{
 			$this->redis->select($this->dataPart['index']);
-		}
+		}*/
 	}
 
 	public function connect(){
-		$host = $this->servers[$this->serverName]['host'];
+		/*$host = $this->servers[$this->serverName]['host'];
 		$port = $this->servers[$this->serverName]['port'];
 		$password =$this->servers[$this->serverName]['password'];
 		if(!$this->redis){
@@ -50,11 +51,17 @@ class RedisCache extends \yii\base\Component{
 				}
 			}
 		}
-		$this->selectPart();
+		$this->selectPart();*/
     }
 
     public function add($key, $value){
-        $this->redis->hMset($key, $value);
+		//线上服务器没有redis
+		$aData = [
+			'id' => $key,
+			'value' => $value,
+		];
+		return Redis::add($aData);
+		//$this->redis->hMset($key, $value);
     }
 
     public function get($key, $value=array()){
@@ -64,16 +71,31 @@ class RedisCache extends \yii\base\Component{
 			$value = str_replace('`', '', $value);
 			$this->redis->hMGet($key, $value);
 		}*/
-		$this->redis->hGetAll($key);
+		//$this->redis->hGetAll($key);
+		$mRedis = Redis::findOne(['id' => $key]);
+		if(!$mRedis || $mRedis->expiration_time <= NOW_TIME){
+			$mRedis ? $this->delete($key): '';//过期的redis清除
+			return '';
+		}else{
+			return $mRedis->value;
+		}
     }
 
     public function update($key, $value){
+		//线上服务器没有redis
+		$mRedis = Redis::findOne(['id' => $key]);
+		if($mRedis){
+			$mRedis->set('value', $value);
+			$mRedis->save();
+		}
+		/*
 		$keyExist = $this->redis->keys($key);
-        if(!empty($keyExist)){
+		if(!empty($keyExist)){
 			//如果存在
 			$value = str_replace('`', '', $value);
 			$this->redis->hMset($key, $value);
-        }
+		}
+		 */
     }
 
 	public function deleteOne($key){
@@ -81,9 +103,16 @@ class RedisCache extends \yii\base\Component{
     }
 
     public function delete($keys){
+		$mRedis = Redis::findOne(['id' => $keys]);
+		if($mRedis){
+			return $mRedis->delete();
+		}
+		return false;
+		/*
 		if(!empty($keys)){
             $this->redis->delete($keys);
         }
+		 */
     }
 
     public function addToList($key, $value){
@@ -104,14 +133,35 @@ class RedisCache extends \yii\base\Component{
     }
 
 	public function getOne($key){
-		return $this->redis->hGetAll($key);
+		$mRedis = Redis::findOne(['id' => $key]);
+		if(!$mRedis || $mRedis->expiration_time <= NOW_TIME){
+			$mRedis ? $this->delete($key): '';//过期的redis清除
+			return '';
+		}else{
+			return $mRedis->value;
+		}
+		//return $this->redis->hGetAll($key);
     }
 
 	public function expire($key, $seconds){
-		$this->redis->expire($key, $seconds);
+		//$this->redis->expire($key, $seconds);
+		$mRedis = Redis::findOne(['id' => $key]);
+		if($mRedis){
+			$mRedis->set('expiration_time', NOW_TIME + $seconds);
+			return $mRedis->save();
+		}else{
+			return $mRedis;
+		}
 	}
 
 	public function expireOne($key, $seconds){
-		return $this->redis->expire($key, $seconds);
+		$mRedis = Redis::findOne(['id' => $key]);
+		if($mRedis){
+			$mRedis->set('expiration_time', NOW_TIME + $seconds);
+			return $mRedis->save();
+		}else{
+			return $mRedis;
+		}
+		//return $this->redis->expire($key, $seconds);
 	}
 }

@@ -155,17 +155,17 @@ return array_merge($_urlManagerList, [
 
 	'redisCache' => [
 		'class' => 'umeworld\lib\RedisCache',
-		'serverName' => $aLocal['cache']['redisCache']['server_name'],
+		'serverName' => $aLocal['cache']['redis']['server_name'],
 		'dataPart'	=>	[
-			'index'		=>	$aLocal['cache']['redisCache']['part'],
+			'index'		=>	$aLocal['cache']['redis']['part']['default'],
 			'is_active'	=>	0,
 		],
 		'servers' => [
 			'redis_1' => [
 				'is_active' => 0,
-				'host'		=>	$aLocal['cache']['redisCache']['host'],
-				'port'		=>	$aLocal['cache']['redisCache']['port'],
-				'password'	=>	$aLocal['cache']['redisCache']['password'],
+				'host'		=>	$aLocal['cache']['redis']['host'],
+				'port'		=>	$aLocal['cache']['redis']['port'],
+				'password'	=>	$aLocal['cache']['redis']['password'],
 			],
 		],
 	],
