@@ -24,6 +24,9 @@ $_aWebAppList = [
 //静态资源url配置
 $_resourceUrl = 'http://www.' . $_domain_host_name . '.' . $_aDomainSuffixConfig[$_projectEnv] . '/resource';
 
+//是否开启数据库缓存
+$_dbcache_is_active = 0;
+
 /*************************************************************************************************/
 
 
@@ -58,6 +61,7 @@ $aLocal = [
 	'aWebAppList' => $_aWebAppList,
 	'resourceUrl' => $_resourceUrl,
 	'cache' => require(PROJECT_PATH . '/common/config/cache.php'),
+	'dbcacheIsActive' => $_dbcache_is_active,
 	'temp' => [],
 ];
 

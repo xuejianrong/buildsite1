@@ -34,6 +34,9 @@ class RedisCache extends \yii\base\Component{
 	}
 
 	public function connect(){
+		if(!class_exists('Redis')){
+			return;
+		}
 		$host = $this->servers[$this->serverName]['host'];
 		$port = $this->servers[$this->serverName]['port'];
 		$password =$this->servers[$this->serverName]['password'];

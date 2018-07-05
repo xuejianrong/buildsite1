@@ -133,19 +133,19 @@ return array_merge($_urlManagerList, [
 		'serverName' => $aLocal['cache']['redis']['server_name'],
 		'dataPart'	=>	[
 			'index'		=>	$aLocal['cache']['redis']['part']['data'],
-			'is_active'	=>	0,
+			'is_active'	=>	$aLocal['dbcacheIsActive'],
 		],
 		'loginPart' =>	[
 			'index'		=>	$aLocal['cache']['redis']['part']['login'],
-			'is_active'	=>	0,
+			'is_active'	=>	$aLocal['dbcacheIsActive'],
 		],
 		'tempPart'	=>	[
 			'index'		=>	$aLocal['cache']['redis']['part']['temp'],
-			'is_active'	=>	0,
+			'is_active'	=>	$aLocal['dbcacheIsActive'],
 		],
 		'servers' => [
 			'redis_1' => [
-				'is_active' => 0,
+				'is_active' =>  $aLocal['dbcacheIsActive'],
 				'host'		=>	$aLocal['cache']['redis']['host'],
 				'port'		=>	$aLocal['cache']['redis']['port'],
 				'password'	=>	$aLocal['cache']['redis']['password'],
@@ -158,11 +158,11 @@ return array_merge($_urlManagerList, [
 		'serverName' => $aLocal['cache']['redis']['server_name'],
 		'dataPart'	=>	[
 			'index'		=>	$aLocal['cache']['redis']['part']['default'],
-			'is_active'	=>	0,
+			'is_active'	=>	$aLocal['dbcacheIsActive'],
 		],
 		'servers' => [
 			'redis_1' => [
-				'is_active' => 0,
+				'is_active' =>  $aLocal['dbcacheIsActive'],
 				'host'		=>	$aLocal['cache']['redis']['host'],
 				'port'		=>	$aLocal['cache']['redis']['port'],
 				'password'	=>	$aLocal['cache']['redis']['password'],
