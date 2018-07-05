@@ -128,8 +128,8 @@ return array_merge($_urlManagerList, [
 		'slaves' => $aLocal['db'][YII_ENV]['slaver']['node'],
 	],
 
-	'cache' => [
-		'class' => 'yii\caching\MemCache',
+	'memCache' => [
+		'class' => 'umeworld\lib\MemCache',
 		'servers' => $aLocal['cache']['memcache'],
 	],
  
