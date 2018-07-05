@@ -128,6 +128,11 @@ return array_merge($_urlManagerList, [
 		'slaves' => $aLocal['db'][YII_ENV]['slaver']['node'],
 	],
 
+	'cache' => [
+		'class' => 'yii\caching\MemCache',
+		'servers' => $aLocal['cache']['memcache'],
+	],
+ 
 	'redis' => [
 		'class' => 'umeworld\lib\RedisCache',
 		'serverName' => $aLocal['cache']['redis']['server_name'],
