@@ -136,6 +136,10 @@ return array_merge($_urlManagerList, [
 	'redis' => [
 		'class' => 'umeworld\lib\RedisCache',
 		'serverName' => $aLocal['cache']['redis']['server_name'],
+		'defaultPart'	=>	[
+			'index'		=>	$aLocal['cache']['redis']['part']['default'],
+			'is_active'	=>	$aLocal['dbcacheIsActive'],
+		],
 		'dataPart'	=>	[
 			'index'		=>	$aLocal['cache']['redis']['part']['data'],
 			'is_active'	=>	$aLocal['dbcacheIsActive'],

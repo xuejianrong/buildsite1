@@ -9,6 +9,7 @@ class RedisCache extends \yii\base\Component{
 	 */
     public $redis = null;
 	public $serverName = '';
+	public $defaultPart = [];
 	public $dataPart = [];
 	public $loginPart = [];
 	public $tempPart = [];
