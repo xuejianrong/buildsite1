@@ -128,7 +128,7 @@ return array_merge($_urlManagerList, [
 		'slaves' => $aLocal['db'][YII_ENV]['slaver']['node'],
 	],
 
-	'memCache' => [
+	'memcache' => [
 		'class' => 'umeworld\lib\MemCache',
 		'servers' => $aLocal['cache']['memcache'],
 	],
