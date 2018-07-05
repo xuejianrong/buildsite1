@@ -71,7 +71,7 @@ return array_merge($_urlManagerList, [
 				if(file_exists($fileName)){
 					$link .= '?v=' . date('YmdHis', filemtime($fileName));
 				}
-				echo '<script type="text/javascript" src="' . $link . '"></script>';
+				Yii::$app->view->registerJsFile($link);
 			}
 		},
 
