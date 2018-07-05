@@ -11,16 +11,22 @@ if(!YII_ENV_PROD){
 $domainSuffix = $aLocal['domain_suffix'][YII_ENV];
 $domainHostName = $aLocal['domain_host_name'];
 
-Yii::setAlias('home',				$appPath . '/apps/home');
+foreach($aLocal['aWebAppList'] as $webApp => $appUrl){
+	Yii::setAlias($webApp, $appPath . '/apps/' . $webApp);
+	Yii::setAlias('url.' . $webApp, $appUrl);
+}
+
+/*Yii::setAlias('home',				$appPath . '/apps/home');
 Yii::setAlias('url.home',			'http://www.' . $domainHostName . '.' . $domainSuffix);
 
 Yii::setAlias('manage',				$appPath . '/apps/manage');
 Yii::setAlias('url.manage',			'http://www.' . $domainHostName . '.' . $domainSuffix);
+*/
 
 //APP别名设置 end
 
 Yii::setAlias('umeworld',			$appPath . '/umeworld');
-Yii::setAlias('r.url', 'http://www.' . $domainHostName . '.' . $domainSuffix . '/resource');
+Yii::setAlias('r.url', $aLocal['resourceUrl']);
 $aLocal['resource_url'] = Yii::getAlias('@r.url');
 Yii::setAlias('p.resource',		$appPath . '/resource');
 Yii::setAlias('p.system_view',		$appPath . '/common/views/system');

@@ -1,43 +1,63 @@
 <?php
+/*************************************************************************************************/
+//域名主体部分配置，取域名中间部分，例如：www.abc.com，则为abc; www.abc.def.com，则为abc.def
+$_domain_host_name = '';
+
+//项目的运行环境
+$_projectEnv = 'prod';
+
+//项目的运行环境对应的域名后缀
+$_aDomainSuffixConfig = [
+	'dev' => 'dev',
+	'test' => 'test',
+	'prod' => 'com',
+];
+
+_InitProjectEnv_($_projectEnv, $_domain_host_name, $_aDomainSuffixConfig);
+
+//应用列表标识和应用url配置
+$_aWebAppList = [
+	'home' => 'http://www.' . $_domain_host_name . '.' . $_aDomainSuffixConfig[$_projectEnv],
+	'manage' => 'http://www.' . $_domain_host_name . '.' . $_aDomainSuffixConfig[$_projectEnv],
+];
+
+//静态资源url配置
+$_resourceUrl = 'http://www.' . $_domain_host_name . '.' . $_aDomainSuffixConfig[$_projectEnv] . '/resource';
+
+/*************************************************************************************************/
+
+
+function _InitProjectEnv_(&$_projectEnv, &$_domain_host_name, $_aDomainSuffixConfig){
+	$aDomainExplode1 = explode('.', $_SERVER['SERVER_NAME']);
+	$aDomainExplode2 = explode('.', $_SERVER['HTTP_HOST']);
+	$_aDomainSuffix = [array_pop($aDomainExplode1), array_pop($aDomainExplode2)];
+	foreach($_aDomainSuffixConfig as $k => $v){
+		if(in_array($v, $_aDomainSuffix)){
+			$_projectEnv = $k;
+			break;
+		}
+	}
+	if(!$_domain_host_name){
+		$_domain_host_name = array_pop($aDomainExplode2);
+	}
+}
 
 defined('PROJECT_PATH') || define('PROJECT_PATH', dirname(dirname(__DIR__)));
 defined('FRAMEWORK_PATH') || define('FRAMEWORK_PATH', PROJECT_PATH . '/framework');
 
 $aLocal = [
 	'is_debug' => true,
-	'env' => require(PROJECT_PATH . '/common/config/env.php'),
-	'domain_host_name' => 'buildsite1',
-	'domain_suffix' => [
-		'dev' => 'dev',
-		'test' => 'test',
-		'prod' => 'com',
-	],
+	'env' => $_projectEnv,
+	'domain_host_name' => $_domain_host_name,
+	'domain_suffix' => $_aDomainSuffixConfig,
 	'db' => [
 		'dev' => require(PROJECT_PATH . '/common/config/db-dev.php'),
 		'test' => require(PROJECT_PATH . '/common/config/db-test.php'),
 		'prod' => require(PROJECT_PATH . '/common/config/db-prod.php'),
 	],
-	'cache' => [
-		'redis' => [
-			'host'		=>	'127.0.0.1',
-			'port'		=>	'6379',
-			'password'	=>	'',
-			'server_name' => 'redis_1',
-			'part' => [
-				'data' => 5,
-				'login' => 6,
-				'temp' => 7,
-			],
-		],
-
-		'redisCache' => [
-			'host'		=>	'127.0.0.1',
-			'port'		=>	'6379',
-			'password'	=>	'',
-			'server_name' => 'redis_1',
-			'part' => 7,
-		],
-	],
+	'aWebAppList' => $_aWebAppList,
+	'resourceUrl' => $_resourceUrl,
+	'cache' => require(PROJECT_PATH . '/common/config/cache.php'),
 	'temp' => [],
 ];
 
