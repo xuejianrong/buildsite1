@@ -58,7 +58,8 @@ $this->setTitle($siteTitle);
 			<ul>
 			<?php foreach($aRelateProductsList as $aRelateProducts){ ?>
 				<li>
-					<a href="<?php echo Url::to(Yii::$app->id, 'products/detail', ['id' => $aRelateProducts['id']]); ?>"><i></i>
+					<i></i>
+					<a href="<?php echo Url::to(Yii::$app->id, 'products/detail', ['id' => $aRelateProducts['id']]); ?>">
 						<img src="<?php echo Yii::getAlias('@r.url'); ?>/<?php echo $aRelateProducts['shortcut']; ?>" width="260" height="355">
 						<span class="intro">
 							<h5><?php echo $aRelateProducts['name']; ?></h5>
