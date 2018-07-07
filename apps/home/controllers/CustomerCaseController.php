@@ -5,7 +5,7 @@ use Yii;
 use umeworld\lib\Controller;
 //use home\lib\Controller;
 use umeworld\lib\Response;
-use yii\data\Pagination;
+use umeworld\lib\Pagination;
 use common\model\ContentItem;
 
 class CustomerCaseController extends Controller{

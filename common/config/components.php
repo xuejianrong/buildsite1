@@ -180,7 +180,7 @@ return array_merge($_urlManagerList, [
 	],
 	
 	'fileCache' => [
-		'class' => '\yii\caching\FileCache',
+		'class' => 'umeworld\lib\FileCache',
 		'cachePath' => PROJECT_PATH . '/cache',
 		'directoryLevel' => 2,
 		'gcProbability' => 1000000

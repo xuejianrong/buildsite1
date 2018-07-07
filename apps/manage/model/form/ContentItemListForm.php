@@ -2,7 +2,7 @@
 namespace manage\model\form;
 
 use Yii;
-use yii\data\Pagination;
+use umeworld\lib\Pagination;
 use common\model\ContentItem;
 
 class ContentItemListForm extends \yii\base\Model{
