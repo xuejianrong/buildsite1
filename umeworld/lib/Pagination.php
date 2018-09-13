@@ -1,6 +1,7 @@
 <?php
 
 namespace umeworld\lib;
+use Yii;
 
 class Pagination extends \yii\data\Pagination{
 	
