@@ -16,13 +16,14 @@ if($mUser){
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title><?php echo Yii::$app->siteSetting->aBaseSetting['siteSeoTitle']; ?></title>
+	<title><?php echo $this->title; ?></title>
 	<meta name="keywords" content="<?php echo Yii::$app->siteSetting->aBaseSetting['siteSeoKeywords']; ?>" />
 	<meta name="description" content="<?php echo Yii::$app->siteSetting->aBaseSetting['siteSeoDescription']; ?>" />
 	<?php $this->head(); ?>
 	<script type="text/javascript">
 		if(window.App && !App.inited){
 			App.config({
+				appid : '<?php echo Yii::$app->id; ?>',
 				isGuest : <?php echo $mUser ? 0 : 1; ?>,
 				url : {
 					resource : '<?php echo Yii::getAlias('@r.url'); ?>'
