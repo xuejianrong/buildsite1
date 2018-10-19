@@ -1,6 +1,8 @@
 <?php
 namespace umeworld\lib;
 
+use Yii;
+
 /**
  * 视图类
  */
@@ -21,6 +23,9 @@ class View extends \yii\web\View{
 	 * @param bool $onlyPageName 是否只显示标题
 	 */
 	public function setTitle($title, $onlyPageName = false){
+		if(Yii::$app->siteSetting->aBaseSetting['siteSeoTitle']){
+			$this->_commonTitle = Yii::$app->siteSetting->aBaseSetting['siteSeoTitle'];
+		}
 		if(!$onlyPageName){
 			if($title){
 				$this->title = $title . ($this->_commonTitle ? ' - ' . $this->_commonTitle : '');
